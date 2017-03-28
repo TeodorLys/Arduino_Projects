@@ -137,12 +137,12 @@ void pressButton(int num, int digRead){
         }
 }   //Function pressButton end
 
-// Functions "Reset", 
+// Functions "Reset",
 void reset() {
-  for (int t = 0; t < numOfCombos; t++) {   //You could aparently declare an int in a for loop... C++ Style?
-    input[t] = 0;   //Zeros the input array
+  for (int inputIndex = 0; inputIndex < numOfCombos; inputIndex++) {   //You could aparently declare an int in a for loop... C++ Style?
+    input[inputIndex] = 0;   //Zeros the input array
   }
-  
+
     time = millis();   //Sets this to 0 because it might be a bugg there
      digitalWrite(rightLight, 0);   //Turns the "Green" light off
       digitalWrite(wrongLight, 0);   //Turns the "Red" light off
