@@ -15,7 +15,7 @@ bool doonce = false;   //Button stopper
 int count = 0;   //How many buttens that have been pressed
 int input[numOfCombos]; //Saves what the user has clicked
 //
-const int del = 10000;   //Timer, if user inputs a number
+const int del = 10000;   //Timer(10s), if user inputs a number
 ///////////////////////////and not inputs another within 10 seconds program will reset
 unsigned long time;
 short int buttonsRead[numOfButtons];   //Stores the "digitalRead()" of buttons[]
