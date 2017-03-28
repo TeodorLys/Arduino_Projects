@@ -17,7 +17,7 @@ int input[numOfCombos]; //Saves what the user has clicked
 //
 const int del = 10000;   //Timer, if user inputs a number
 ///////////////////////////and not inputs another within 10 seconds program will reset
-int time;
+unsigned long time;
 short int buttonsRead[numOfButtons];   //Stores the "digitalRead()" of buttons[]
 const short int buttonStream = 2;   //Electricity for the buttons, didnt really know how to name this one so buttonStream it is
 const short int rightLight = 9;   //Correct combo PIN, "Green" light
