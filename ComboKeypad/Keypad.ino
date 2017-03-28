@@ -1,5 +1,5 @@
 //USER VARIABLES, Variables that YOU change for YOUR preferences
-const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons
+const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons {FIRST, SECOND, etc...}
 
 const int combination[] = {3, 1, 2, 4};  //what the combination is, to add just add a "," and a number
 
@@ -31,12 +31,14 @@ void debug();
 
 //Function setup
 void setup() {
+    //Used to be able to add as many buttons as you want
     for(int setb = 0; setb < numOfButtons; setb++){
       pinMode(buttons[setb], INPUT); // sets All Input pin
      }
 
-    pinMode(wrongLight, OUTPUT);   //Wrong Light
-    pinMode(rightLight, OUTPUT);   //Right Light
+    pinMode(wrongLight, OUTPUT);   //Wrong Light, "Red" Light
+    pinMode(rightLight, OUTPUT);   //Right Light, "Green" Light
+
   if(!useFiveVoltpin){
   pinMode(buttonStream, OUTPUT);   //Button Stream
   digitalWrite(buttonStream, 1);   //Starts the Electricity for button pull down resistor
@@ -59,6 +61,7 @@ for(int state = 0; state < numOfButtons; state++){
 
     //If timer has run out, reset all arrays the count variable
     if(count != 0 && millis() - time > del) {   //Resets if timer runs out
+      Serial.println("runns resety");
       reset();   //Runs the Reset function
     }
 
@@ -70,7 +73,7 @@ for(int a = 0; a < numOfCombos; a++){
 }
 
  //////////////////////////////////////////////////////////////////////////////
- /// Checks if what button user presses is correct                          ///
+ /// Checks if what button the user presses is correct                          ///
  //////////////////////////////////////////////////////////////////////////////
  if(value == numOfCombos) { // Correction number
    digitalWrite(9, 1); //Corrections Light
@@ -82,7 +85,7 @@ for(int a = 0; a < numOfCombos; a++){
 ///////////////////////////////////////////////////////////////////////////////
 /// If the combo number limit is reached                                    ///
 /// and some or all are wrong                                               ///
-/// \                                                                        ///
+/// \                                                                       ///
 /// this for loop is here to be able to customize this code                 ///
 /// to add any amount of combinations and buttons                           ///
 ///////////////////////////////////////////////////////////////////////////////
@@ -95,17 +98,16 @@ for(int a = 0; a < numOfCombos; a++){
   }
 }
 
-// Which number i have input
+// Which number I have input
 if (count < numOfCombos) { // Restricts the variable to not go over 4
 
-  //Start of Combo,(Badger and Skinny Pete)
+  //Start of Combo,('(Badger and Skinny Pete)')
   for(int a = 0; a < numOfButtons; a++){
     pressButton(a, buttonsRead[a]);   //Runs the function pressButton
 ////////////////////////////////////////to save the button press and
 ////////////////////////////////////////add to the counter
   }
 }
-// Which number i have input end
 
 }   //Function Loop end
 
@@ -139,12 +141,16 @@ void pressButton(int num, int digRead){
 // Functions "Reset"
 void reset() {
   // Reset everything
+ Serial.println("Reset");
+
   for (int t = 0; t < numOfCombos; t++) {   //You could aparently declare an int in a for loop... C++ Style?
     input[t] = 0;   //Zeros the input array
   }
-   digitalWrite(rightLight, 0);   //Turns the "Green" light off
-    digitalWrite(wrongLight, 0);   //Turns the "Red" light off
-     count = 0;  //Sets the counter to 0
+  
+    time = millis();   //Sets this to 0 because it might be a bugg there
+     digitalWrite(rightLight, 0);   //Turns the "Green" light off
+      digitalWrite(wrongLight, 0);   //Turns the "Red" light off
+       count = 0;  //Sets the counter to 0
 
 }//Function Reset end
 
@@ -153,8 +159,8 @@ void debug(){
   Serial.print("Count = ");
    Serial.print(count);
     Serial.print(", |");
-    for(int a = 0; a < numOfCombos; a++){
-     Serial.print(input[a]);   //Prints which number has been pressed
-   }
-   Serial.println();
+     for(int a = 0; a < numOfCombos; a++){
+      Serial.print(input[a]);   //Prints which number has been pressed
+    }
+       Serial.println();
 }
