@@ -1,5 +1,5 @@
 //USER VARIABLES, Variables that YOU change for YOUR preferences
-const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons {FIRST, SECOND, etc...}
+const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons
 
 const int combination[] = {3, 1, 2, 4};  //what the combination is, to add just add a "," and a number
 
@@ -61,7 +61,6 @@ for(int state = 0; state < numOfButtons; state++){
 
     //If timer has run out, reset all arrays the count variable
     if(count != 0 && millis() - time > del) {   //Resets if timer runs out
-      Serial.println("runns resety");
       reset();   //Runs the Reset function
     }
 
@@ -138,11 +137,8 @@ void pressButton(int num, int digRead){
         }
 }   //Function pressButton end
 
-// Functions "Reset"
+// Functions "Reset", 
 void reset() {
-  // Reset everything
- Serial.println("Reset");
-
   for (int t = 0; t < numOfCombos; t++) {   //You could aparently declare an int in a for loop... C++ Style?
     input[t] = 0;   //Zeros the input array
   }
