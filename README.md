@@ -1,2 +1,4 @@
 # Arduino_Projects
-A variety of projects that I have been working on for a few years
+This Repository contains project such as:
+Combination Keypad lock, this is programmed for Arduino UNO but can be modified to work for any Arduino board
+
