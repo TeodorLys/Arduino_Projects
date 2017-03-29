@@ -72,7 +72,7 @@ for(int a = 0; a < numOfCombos; a++){
 }
 
  //////////////////////////////////////////////////////////////////////////////
- /// Checks if what button the user presses is correct                          ///
+ /// Checks if what button the user presses is correct                      ///
  //////////////////////////////////////////////////////////////////////////////
  if(value == numOfCombos) { // Correction number
    digitalWrite(9, 1); //Corrections Light
