@@ -1,3 +1,6 @@
+//
+//
+//
 //USER VARIABLES, Variables that YOU change for YOUR preferences
 const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons
 
