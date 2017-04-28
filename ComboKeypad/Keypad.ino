@@ -128,7 +128,7 @@ void pressButton(int num, int digRead){
       }
 
       //////////////////////////////////////////////////////////////////////
-      /// So the it doesnt go ON and OFF infinitly, Basically a stopper  ///
+      /// So it doesnt go ON and OFF infinitly, Basically a stopper  ///
       /// If no button is pressed reset the doonce                       ///
       //////////////////////////////////////////////////////////////////////
       if (exists == numOfButtons && doonce == true){
@@ -137,7 +137,7 @@ void pressButton(int num, int digRead){
         }
 }   //Function pressButton end
 
-// Functions "Reset",
+// Functions "Reset"
 void reset() {
   for (int inputIndex = 0; inputIndex < numOfCombos; inputIndex++) {   //You could aparently declare an int in a for loop... C++ Style?
     input[inputIndex] = 0;   //Zeros the input array
