@@ -108,7 +108,7 @@ if (count < numOfCombos) { // Restricts the variable to not go over 4
   }
 }
 
-}//Function Loop end
+}/*----(Function Loop end)----*/
 
 //////////////////////////////////////////////////////
 
@@ -149,7 +149,7 @@ void reset() {
       digitalWrite(wrongLight, 0);   //Turns the "Red" light off
        count = 0;  //Sets the counter to 0
 
-}//Function Reset end
+}/*----(Function Reset end)----*/
 
 //Function Debug, Prints the count, and what has been pressed
 void debug(){
