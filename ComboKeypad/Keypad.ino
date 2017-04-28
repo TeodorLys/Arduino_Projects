@@ -6,13 +6,17 @@ const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons
 
 const int combination[] = {3, 1, 2, 4};  //what the combination is, to add just add a "," and a number
 
+const bool useFiveVoltpin = false;   //Change this if you want to use the
+///////////////////////////////////////5Volt PIN instead of PIN 2(IN MY CASE)
+
+//USER VARIABLES END
+
 const int numOfCombos = sizeof(combination) / sizeof(combination[0]);   //How many combinations
 
 const int numOfButtons = sizeof(buttons) / sizeof(buttons[0]);   //How many buttons you have
 
-const bool useFiveVoltpin = false;   //Change this if you want to use the
-///////////////////////////////////////5Volt PIN instead of PIN 2(IN MY CASE)
-//USER VARIABLES END
+
+
 ///
 bool doonce = false;   //Button stopper
 int count = 0;   //How many buttens that have been pressed
