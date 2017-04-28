@@ -136,7 +136,7 @@ void pressButton(int num, int digRead){
          doonce = false;
           delay(50);
         }
-}   //Function pressButton end
+}/*----(Function pressButton end)----*/
 
 // Functions "Reset"
 void reset() {
