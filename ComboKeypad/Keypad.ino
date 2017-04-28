@@ -108,8 +108,9 @@ if (count < numOfCombos) { // Restricts the variable to not go over 4
   }
 }
 
-}   //Function Loop end
+}//Function Loop end
 
+//////////////////////////////////////////////////////
 
 //Function pressButton, If user presses a Button
 void pressButton(int num, int digRead){
