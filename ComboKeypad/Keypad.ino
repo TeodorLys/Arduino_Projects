@@ -9,7 +9,7 @@ const int numOfButtons = sizeof(buttons) / sizeof(buttons[0]);   //How many butt
 
 const bool useFiveVoltpin = false;   //Change this if you want to use the
 ///////////////////////////////////////5Volt PIN instead of PIN 2(IN MY CASE)
-//USER VARIABLES, Variables that YOU change for YOUR preferences | END
+//USER VARIABLES END
 ///
 bool doonce = false;   //Button stopper
 int count = 0;   //How many buttens that have been pressed
