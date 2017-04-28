@@ -143,7 +143,7 @@ void reset() {
     input[inputIndex] = 0;   //Zeros the input array
   }
 
-    time = millis();   //Sets this to 0 because it might be a bugg there
+    time = millis();
      digitalWrite(rightLight, 0);   //Turns the "Green" light off
       digitalWrite(wrongLight, 0);   //Turns the "Red" light off
        count = 0;  //Sets the counter to 0
