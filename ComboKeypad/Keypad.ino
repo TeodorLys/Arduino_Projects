@@ -18,7 +18,7 @@ int count = 0;   //How many buttens that have been pressed
 int input[numOfCombos]; //Saves what the user has clicked
 //
 const short int del = 10000;   //Timer(10s), if user inputs a number
-///////////////////////////and not inputs another within 10 seconds program will reset
+                               //and not inputs another within 10 seconds program will reset
 unsigned long time;
 short int buttonsRead[numOfButtons];   //Stores the "digitalRead()" of buttons[]
 const short int buttonStream = 2;   //Electricity for the buttons, didnt really know how to name this one so buttonStream it is
@@ -26,7 +26,7 @@ const short int rightLight = 9;   //Correct combo PIN, "Green" light
 const short int wrongLight = 8;   //Incorrect combo PIN, "Red" Light
 ///
 //Function prototyping
-void pressButton(int num, int digRead);
+void pressButton(short int num, short int digRead);
 void reset();
 void debug();
 //Function prototyping
@@ -113,7 +113,7 @@ if (count < numOfCombos) { // Restricts the variable to not go over 4
 //////////////////////////////////////////////////////
 
 //Function pressButton, If user presses a Button
-void pressButton(int num, int digRead){
+void pressButton(short int num, short int digRead){
   if (digRead == 1 && doonce != true) { // If I hit a Button
    time = millis();   //Starts the 10 second timer
     input[count] = num + 1; // sends the number 1 into the array at the "count number"
