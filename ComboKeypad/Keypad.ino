@@ -1,3 +1,5 @@
+
+
 //
 //USER VARIABLES, Variables that YOU change for YOUR preferences
 const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons
@@ -8,15 +10,14 @@ const bool useFiveVoltpin = false;   //Change this if you want to use the
 ///////////////////////////////////////5Volt PIN instead of PIN 2(IN MY CASE)
 /*----(USER VARIABLES END)----*/
 
-///
 const int numOfCombos = sizeof(combination) / sizeof(combination[0]);   //How many combinations
-
 const int numOfButtons = sizeof(buttons) / sizeof(buttons[0]);   //How many buttons you have
 
 bool doonce = false;   //Button stopper
 int count = 0;   //How many buttens that have been pressed
 int input[numOfCombos]; //Saves what the user has clicked
 //
+
 const short int del = 10000;   //Timer(10s), if user inputs a number
                                //and not inputs another within 10 seconds program will reset
 unsigned long time;
@@ -25,11 +26,11 @@ const short int buttonStream = 2;   //Electricity for the buttons, didnt really 
 const short int rightLight = 9;   //Correct combo PIN, "Green" light
 const short int wrongLight = 8;   //Incorrect combo PIN, "Red" Light
 ///
-//Function prototyping
+/*----(Function prototyping)----*/
 void pressButton(short int num, short int digRead);
 void reset();
 void debug();
-//Function prototyping
+
 
 /*----(Function setup)----*/
 void setup() {
@@ -138,7 +139,7 @@ void pressButton(short int num, short int digRead){
         }
 }/*----(Function pressButton END)----*/
 
-// Functions "Reset"
+/*----(Function Reset)----*/
 void reset() {
   for (short int inputIndex = 0; inputIndex < numOfCombos; inputIndex++) {
     input[inputIndex] = 0;   //Zeros the input array
@@ -151,7 +152,7 @@ void reset() {
 
 }/*----(Function Reset END)----*/
 
-//Function Debug, Prints the count, and what has been pressed
+/*----(Function Debug, Prints the count, and what has been pressed)----*/
 void debug(){
   Serial.print("Count = ");
    Serial.print(count);
@@ -161,4 +162,4 @@ void debug(){
       Serial.print(input[a]);   //Prints which number has been pressed
     }
   Serial.println();
-}
+}/*----(Function Debug END)----*/
