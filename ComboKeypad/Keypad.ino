@@ -94,7 +94,7 @@ for(int a = 0; a < numOfCombos; a++){
 ///////////////////////////////////////////////////////////////////////////////
 for(int a = 0; a < numOfCombos; a++){
   if(input[a] != combination[a] && count == numOfCombos){
-    digitalWrite(wrongLight, 1);   //Lights up the "Red" button
+    digitalWrite(wrongLight, 1);   //Lights up the "red" button
      Serial.println("Wrong");   //Prints that the combination is wrong
       delay(100);   //Safety delay
        reset();   //Runs the reset function
