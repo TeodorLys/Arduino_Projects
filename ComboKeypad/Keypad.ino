@@ -8,7 +8,7 @@ const int combination[] = {3, 1, 2, 4};  //what the combination is, to add just 
 
 const bool useFiveVoltpin = false;   //Change this if you want to use the
 ///////////////////////////////////////5Volt PIN instead of PIN 2(IN MY CASE)
-//USER VARIABLES END
+/*----(USER VARIABLES END)----*/
 
 ///
 const int numOfCombos = sizeof(combination) / sizeof(combination[0]);   //How many combinations
@@ -19,7 +19,7 @@ bool doonce = false;   //Button stopper
 int count = 0;   //How many buttens that have been pressed
 int input[numOfCombos]; //Saves what the user has clicked
 //
-const int del = 10000;   //Timer(10s), if user inputs a number
+const short int del = 10000;   //Timer(10s), if user inputs a number
 ///////////////////////////and not inputs another within 10 seconds program will reset
 unsigned long time;
 short int buttonsRead[numOfButtons];   //Stores the "digitalRead()" of buttons[]
@@ -33,7 +33,7 @@ void reset();
 void debug();
 //Function prototyping
 
-//Function setup
+/*----(Function setup)----*/
 void setup() {
     //Used to be able to add as many buttons as you want
     for(int setb = 0; setb < numOfButtons; setb++){
@@ -48,10 +48,10 @@ void setup() {
   digitalWrite(buttonStream, 1);   //Starts the Electricity for button pull down resistor
 }
   Serial.begin(9600); //Debug
-}//Setup Function End
+}/*----(Setup Function End)----*/
 
 
-//Function loop
+/*----(Function loop)----*/
 void loop() {
     //Gets the Button States
 for(int state = 0; state < numOfButtons; state++){
