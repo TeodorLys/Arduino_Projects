@@ -66,7 +66,7 @@ for(short int state = 0; state < numOfButtons; state++){
       reset();
     }
 
-int value = 0;   //how many combos are correct
+short int value = 0;   //how many combos are correct
 for(short int a = 0; a < numOfCombos; a++){
     if(input[a] == combination[a]){   //Checks if the input and the combo are the same
      value++;   //Adds one if combo is correct
