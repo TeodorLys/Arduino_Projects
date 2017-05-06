@@ -1,6 +1,4 @@
 //
-//
-//
 //USER VARIABLES, Variables that YOU change for YOUR preferences
 const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons
 
@@ -36,7 +34,7 @@ void debug();
 /*----(Function setup)----*/
 void setup() {
     //Used to be able to add as many buttons as you want
-    for(int setb = 0; setb < numOfButtons; setb++){
+    for(short int setb = 0; setb < numOfButtons; setb++){
       pinMode(buttons[setb], INPUT); // sets All Input pin
      }
 
@@ -54,22 +52,21 @@ void setup() {
 /*----(Function loop)----*/
 void loop() {
     //Gets the Button States
-for(int state = 0; state < numOfButtons; state++){
+for(short int state = 0; state < numOfButtons; state++){
   buttonsRead[state] = digitalRead(buttons[state]); // First Switch
 }
 
 
-  // Debug
+  //Debug
   debug();
-  // Debug
 
     //If timer has run out, reset all arrays the count variable
     if(count != 0 && millis() - time > del) {   //Resets if timer runs out
-      reset();   //Runs the Reset function
+      reset();
     }
 
 int value = 0;   //how many combos are correct
-for(int a = 0; a < numOfCombos; a++){
+for(short int a = 0; a < numOfCombos; a++){
     if(input[a] == combination[a]){   //Checks if the input and the combo are the same
      value++;   //Adds one if combo is correct
     }
@@ -92,7 +89,7 @@ for(int a = 0; a < numOfCombos; a++){
 /// this for loop is here to be able to customize this code                 ///
 /// to add any amount of combinations and buttons                           ///
 ///////////////////////////////////////////////////////////////////////////////
-for(int a = 0; a < numOfCombos; a++){
+for(short int a = 0; a < numOfCombos; a++){
   if(input[a] != combination[a] && count == numOfCombos){
     digitalWrite(wrongLight, 1);   //Lights up the "red" button
      Serial.println("Wrong");   //Prints that the combination is wrong
@@ -103,7 +100,6 @@ for(int a = 0; a < numOfCombos; a++){
 
 // Which number I have input
 if (count < numOfCombos) { // Restricts the variable to not go over 4
-
   //Start of Combo,('(Badger and Skinny Pete)')
   for(int a = 0; a < numOfButtons; a++){
     pressButton(a, buttonsRead[a]);   //Runs the function pressButton
@@ -124,9 +120,9 @@ void pressButton(int num, int digRead){
      count++; // Where to put 4 into the array
       doonce = true;
     }
-    int exists;
+    short int exists;
 
-      for(int a = 0; a < numOfButtons; a++){
+      for(short int a = 0; a < numOfButtons; a++){
         if(buttonsRead[a] == 0){
           exists++;
         }
@@ -137,14 +133,14 @@ void pressButton(int num, int digRead){
       /// If no button is pressed reset the doonce                       ///
       //////////////////////////////////////////////////////////////////////
       if (exists == numOfButtons && doonce == true){
-         doonce = false;
-          delay(50);
+          doonce = false;
+           delay(50);
         }
 }/*----(Function pressButton END)----*/
 
 // Functions "Reset"
 void reset() {
-  for (int inputIndex = 0; inputIndex < numOfCombos; inputIndex++) {   //You could aparently declare an int in a for loop... C++ Style?
+  for (short int inputIndex = 0; inputIndex < numOfCombos; inputIndex++) {
     input[inputIndex] = 0;   //Zeros the input array
   }
 
@@ -160,8 +156,9 @@ void debug(){
   Serial.print("Count = ");
    Serial.print(count);
     Serial.print(", |");
-     for(int a = 0; a < numOfCombos; a++){
+
+     for(short int a = 0; a < numOfCombos; a++){
       Serial.print(input[a]);   //Prints which number has been pressed
     }
-       Serial.println();
+  Serial.println();
 }
