@@ -4,7 +4,7 @@
 //USER VARIABLES, Variables that YOU change for YOUR preferences
 const int buttons[] {7, 6, 5, 4};   //The PIN of all of the buttons
 
-const int combination[] = {3, 1, 2, 4};  //what the combination is, to add just add a "," and a number
+const int combination[] = {3, 1, 2, 4};  //what the combination is
 
 const bool useFiveVoltpin = false;   //Change this if you want to use the
 ///////////////////////////////////////5Volt PIN instead of PIN 2(IN MY CASE)
