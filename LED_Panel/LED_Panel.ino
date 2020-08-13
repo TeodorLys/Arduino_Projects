@@ -9,7 +9,7 @@ int count = 0;
 void setup() {
   //Serial.begin(9600);
   la.Init_Panels();
-  la.set_String("teodor van ginhoven");
+  la.set_String("teodorlys");
   time = millis();
 }
 
